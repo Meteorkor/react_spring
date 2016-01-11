@@ -1,0 +1,29 @@
+package com.react.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import lombok.Data;
+
+@Data
+@Entity
+public class Employee {
+
+	@GeneratedValue
+	@Id
+	private Long id;
+	private String name;
+	private String description;
+	
+	public Employee(String name, String description) {
+		super();
+		this.name = name;
+		this.description = description;
+	}
+	
+	
+	
+
+	
+}
