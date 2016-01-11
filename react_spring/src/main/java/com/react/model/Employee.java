@@ -16,8 +16,10 @@ public class Employee {
 	private String name;
 	private String description;
 	
+	private Employee(){}
+	
 	public Employee(String name, String description) {
-		super();
+//		super();
 		this.name = name;
 		this.description = description;
 	}
