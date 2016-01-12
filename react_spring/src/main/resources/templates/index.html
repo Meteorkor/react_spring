@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR"/>
 <title>Insert title here</title>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body>
-<p>Hello</p>
+		<div>
+			<span>Name : </span> <input type='text' name='name' id='name' />
+		</div>
+		<div>
+			<span>desc : </span> <input type='text' name='description'
+				id='description' />
+		</div>
+		<button id='insert'>Insert</button>
+
+<script type="text/javascript">
+
+function sendPostEmployee(){
+	var EmplName = $("#name").val();
+	var EmplDesc = $("#description").val();
+	
+	var ob = {name: EmplName, description : EmplDesc};
+	
+	
+	$.ajax({
+		type : "post",
+		url : "api/employees",
+		data : JSON.stringify(ob),
+		contentType : "application/json"
+	})
+	
+	//$.post("api/employees", ob );
+	
+}
+$("#insert").on("click", sendPostEmployee);
+</script>
+	
+	
+	<div id="react"></div>
+
+    <script src="built/bundle.js"></script>
+	
 </body>
 </html>
